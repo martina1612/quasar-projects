@@ -72,7 +72,7 @@ void QuasarServer::mainLoop()
             	for (Device::DReadbackSettings * readbSets : chan->readbacksettingss())
                 	readbSets->update();
 
-        //update channels readbacksettings
+        //update channels actual values
         for (Device::DGpibPowerSupply * ps : Device::DRoot::getInstance()->gpibpowersupplys())
             for (Device::DChannel * chan : ps->channels())
             	for (Device::DActual * actual : chan->actuals())
