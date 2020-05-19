@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns:xs="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:d="http://cern.ch/quasar/Design"
+      xmlns:fnc="http://cern.ch/quasar/MyFunctions">
+   <h1>Configuration documentation for GpibPowerSupplyController</h1>
+    
+    
+    Jump to:
+    <a href="#class_GpibPowerSupply">GpibPowerSupply</a> 
+   <a href="#class_Commands">Commands</a> 
+   <a href="#class_OnRequest">OnRequest</a> 
+   <a href="#class_Channel">Channel</a> 
+   <a href="#class_ReadbackSettings">ReadbackSettings</a> 
+   <a href="#class_Settings">Settings</a> 
+   <a href="#class_Actual">Actual</a> 
+   <a id="class_Actual">
+      <h2>Actual</h2>
+   </a>
+        This class(XML element) has no configuration attributes.
+        
+    
+    Possible children:
+    <a href="#class_CalculatedVariable">CalculatedVariable</a>
+   <a id="class_Channel">
+      <h2>Channel</h2>
+   </a>
+        Configuration attributes:
+        <ul>
+      <li>
+         <b>number</b> (OpcUa_Int16)
+                mandatory<div style="background-color: #ffefef">
+            <font color="red">Value restrictions</font>
+            <br/>
+                        Bounds:
+                        <code>number&gt;=1</code>
+         </div>
+         <br/>
+      </li>
+   </ul>
+    
+    Possible children:
+    <a href="#class_CalculatedVariable">CalculatedVariable</a>
+   <a href="#class_Settings">Settings</a>
+   <a href="#class_ReadbackSettings">ReadbackSettings</a>
+   <a href="#class_Actual">Actual</a>
+   <a id="class_Commands">
+      <h2>Commands</h2>
+   </a>
+        This class(XML element) has no configuration attributes.
+        
+    
+    Possible children:
+    <a href="#class_CalculatedVariable">CalculatedVariable</a>
+   <a id="class_GpibPowerSupply">
+      <h2>GpibPowerSupply</h2>
+   </a>
+        Configuration attributes:
+        <ul>
+      <li>
+         <b>board</b> (OpcUa_Int16)
+                mandatory<div style="background-color:#eeeeff">
+            <font color="blue">DOC</font> 
+            <d:documentation>Specifies which GPIB interface board the device is connected to.</d:documentation>
+         </div>
+         <br/>
+      </li>
+      <li>
+         <b>primaryAddress</b> (OpcUa_Int16)
+                mandatory<div style="background-color:#eeeeff">
+            <font color="blue">DOC</font> 
+            <d:documentation>Specifies the GPIB primary address of the device to be opened.</d:documentation>
+         </div>
+         <br/>
+      </li>
+      <li>
+         <b>secondaryAddress</b> (OpcUa_Int16)
+                optional (the default value shown below will be used if non-present)<div style="background-color:#eeeeff">
+            <font color="blue">DOC</font> 
+            <d:documentation>
+  			Specifies the GPIB secondary address of the device to be
+  			opened. If not specified the default value NO_SAD will be used.
+  		</d:documentation>
+         </div>
+         <div style="background-color: #efffef">
+            <b>Default value:</b>-1</div>
+         <br/>
+      </li>
+      <li>
+         <b>timeOut</b> (OpcUa_Int16)
+                optional (the default value shown below will be used if non-present)<div style="background-color:#eeeeff">
+            <font color="blue">DOC</font> 
+            <d:documentation>Specifies the timeout for i/o operations. If not specified the default value T10s will be used.</d:documentation>
+         </div>
+         <div style="background-color: #efffef">
+            <b>Default value:</b>-1</div>
+         <br/>
+      </li>
+      <li>
+         <b>send_eoi</b> (OpcUa_Int16)
+                optional (the default value shown below will be used if non-present)<div style="background-color:#eeeeff">
+            <font color="blue">DOC</font> 
+            <d:documentation>If nonzero the EOI line will be asserted with the last byte sent during writes. If not specified the default value 0 will be used.</d:documentation>
+         </div>
+         <div style="background-color: #efffef">
+            <b>Default value:</b>0</div>
+         <br/>
+      </li>
+      <li>
+         <b>eos</b> (OpcUa_Int16)
+                optional (the default value shown below will be used if non-present)<div style="background-color:#eeeeff">
+            <font color="blue">DOC</font> 
+            <d:documentation>Specifies the end-of-string character and whether or not its reception should terminatereades. If not specified the default value 1 will be used. More info at https://linux-gpib.sourceforge.io/doc_html/reference-function-ibeos.html</d:documentation>
+         </div>
+         <div style="background-color: #efffef">
+            <b>Default value:</b>1</div>
+         <br/>
+      </li>
+   </ul>
+    
+    Possible children:
+    <a href="#class_CalculatedVariable">CalculatedVariable</a>
+   <a href="#class_Commands">Commands</a>
+   <a href="#class_OnRequest">OnRequest</a>
+   <a href="#class_Channel">Channel</a>
+   <a id="class_OnRequest">
+      <h2>OnRequest</h2>
+   </a>
+        This class(XML element) has no configuration attributes.
+        
+    
+    Possible children:
+    <a href="#class_CalculatedVariable">CalculatedVariable</a>
+   <a id="class_ReadbackSettings">
+      <h2>ReadbackSettings</h2>
+   </a>
+        This class(XML element) has no configuration attributes.
+        
+    
+    Possible children:
+    <a href="#class_CalculatedVariable">CalculatedVariable</a>
+   <a id="class_Settings">
+      <h2>Settings</h2>
+   </a>
+        This class(XML element) has no configuration attributes.
+        
+    
+    Possible children:
+    <a href="#class_CalculatedVariable">CalculatedVariable</a>
+   <a id="class_CalculatedVariable">
+      <h2>CalculatedVariable</h2>
+   </a>
+    A CalculatedVariable is a "synthetic" variable which is based on other "real" variables of the address-space.
+    You can declare a CalculatedVariable under any object in the configuration file.
+    The required attributes are:
+    <ul>
+      <li>name - will be the last part of the address</li>
+      <li>value - analytical formula used to calculate value of the variable. 
+        E.g. to calculate square of another variable with address x.y you should put <code>x.y^2</code>
+      </li>
+   </ul>
+    Detailed documentation of all features of CalculatedVariables is available in quasar Documentation.
+    
+    </html>
